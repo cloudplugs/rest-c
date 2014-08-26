@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libcprest
+Description: CloudPlugs REST API
+URL: http://api.cloudplugs.com
+Version: @VERSION@
+Requires: libcurl >= 7.0 jansson >= 2.4
+Libs: 
+Cflags: 
