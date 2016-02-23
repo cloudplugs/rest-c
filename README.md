@@ -9,13 +9,13 @@ Documentation at https://docs.cloudplugs.com/rest-c/html
 
 See the LICENSE file for more details.
 
-Copyright 2014 CloudPlugs Inc. http://www.cloudplugs.com
+Copyright 2015 CloudPlugs Inc. http://www.cloudplugs.com
 
 Required libraries
 ----
 
 Libcurl 7.0+: http://curl.haxx.se/
-
+(for SSL support it is mandatory to use libcurl compiled with built-in SSL support)
 
 Jansson 2.4+: https://github.com/akheron/jansson
 (optional)
@@ -41,9 +41,9 @@ sudo apt-get install libjansson-dev
 
 If not, you can download, compile and install Jansson library:
 ```
-wget http://www.digip.org/jansson/releases/jansson-2.6.tar.gz
-tar xvfz jansson-2.6.tar.gz
-cd jansson-2.6/
+wget http://www.digip.org/jansson/releases/jansson-2.7.tar.gz
+tar xvfz jansson-2.7.tar.gz
+cd jansson-2.7/
 ./configure
 make
 sudo make install
@@ -52,8 +52,8 @@ sudo ldconfig
 
 Finally download, compile and install the CloudPlugs REST library:
 ```
-git clone git://github.com/cloudplugs/repo-c
-cd repo-c
+git clone git://github.com/cloudplugs/rest-c
+cd rest-c
 autoreconf -i
 ./configure
 make

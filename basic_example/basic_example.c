@@ -1,5 +1,5 @@
 /*
-Copyright 2014 CloudPlugs Inc.
+Copyright 2015 CloudPlugs Inc.
 
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -23,8 +23,8 @@ under the License.
 #include <stdlib.h>
 #include <time.h>
 
-#define AUTH_PLUGID "dev-xxxxxxxxxxxxxxxxxx" /**< The device plug ID */
-#define AUTH_PASS "your-password" /**< The master password */
+#define AUTH_PLUGID "dev-xxxxxxxxxxxxxxxxxx" /**< The device plug ID or your CloudPlugs account id if AUTH_MASTER is CP_TRUE */
+#define AUTH_PASS "your-password" /**< The device connection password or your CloudPlugs account password if AUTH_MASTER is CP_TRUE */
 #define AUTH_MASTER CP_TRUE
 
 int getTemp() {
@@ -36,6 +36,10 @@ int main(void) {
     cloudplugs_global_init();
     printf("****CLOUDPLUGS EXAMPLE****\n");
     cp_session cps = cloudplugs_create_session();
+
+    /**< By default the library uses a plain text connection to CloudPlugs,
+         uncomment the following to change the behavior and to use a SSL secure connection */
+    //cloudplugs_enable_ssl(cps, CP_TRUE);
 
     char* res = NULL;
     size_t res_len;
